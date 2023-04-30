@@ -16,7 +16,7 @@ try{
            data:NewUser,
         })
     }else{
-        return res.json({
+        return        res.status(400).json({
             error:true,
             message:"User Already Exists! Login Instead" 
         })
@@ -42,15 +42,15 @@ if(userExist){
         message: `Welcome to the Blog ${userExist.name}`,
         data:userExist 
     }) }else{
-        res.json({
-            error:false,
+        return res.status(400).json({
+            error:true,
             message: `Password not Matched`
-        })  
+        })
     }
 }else{
     return res.status(400).json({
         error:true,
-        message: "Couldnt Find User By This Email"
+        message: "Could not find user by this Email"
     })
 }
     }catch(error){
