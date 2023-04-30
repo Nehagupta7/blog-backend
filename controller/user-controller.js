@@ -29,7 +29,6 @@ try{
 
 const loginUser =async (req,res,next)=>{
     const {email,password}=req.body;
-console.log(email,"start")
 
     let userExist= await User.findOne({email});
 console.log(userExist,"userExist")

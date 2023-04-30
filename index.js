@@ -7,7 +7,7 @@ var morgan = require('morgan')
 
 app.use(morgan('tiny'))
 app.use(cors());
- const Port=8080
+ const Port=8000
 const bosyParser=require("body-parser")
 // liSULS6Nw2eWYu79
 app.use(express.json({}))
@@ -25,5 +25,5 @@ app.get('/', function(req, res){
 });
 
 app.listen(Port,()=>{
-    console.log("server running")
+    console.log("server running",Port)
 })
